@@ -44,7 +44,7 @@ function createNavBar(){
     let navBar = document.querySelectorAll('a');
     let arrayNav = Array.from(navBar);
     for(i=0; i<arrayNav.length; i++){
-    navBar[i].append(siteContent.nav[i]);
+    navBar[i].append(siteContent.nav["nav-item-"+(i+1)+""]);
   }
 }
 
