@@ -40,7 +40,69 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-let navBar = document.querySelectorAll('nav');
-navBar.forEach(element => {
-  
-});
+function createNavBar(){
+    let navBar = document.querySelectorAll('a');
+    let arrayNav = Array.from(navBar);
+    for(i=0; i<arrayNav.length; i++){
+    navBar[i].append(siteContent.nav[i]);
+  }
+}
+
+createNavBar();
+
+function setButton(){
+  let button = document.querySelector('.cta-text').children;
+  button[0].append(siteContent.cta.h1);
+  button[1].append(siteContent.cta.button);
+}
+setButton();
+
+function setImage(){
+  let image = document.getElementById("cta-img");
+  image.setAttribute("src",siteContent.cta["img-src"])
+}
+setImage();
+
+function toptext(){
+  let textContent = document.querySelector(".top-content").children;
+  let textLeft = textContent[0].children;
+  textLeft[0].append(siteContent["main-content"]["features-h4"])
+  textLeft[1].append(siteContent["main-content"]["features-content"])
+  let textRight = textContent[1].children;
+  textRight[0].append(siteContent["main-content"]["about-h4"])
+  textRight[1].append(siteContent["main-content"]["about-content"])
+}
+toptext();
+function setImageMiddle(){
+  let image = document.getElementById("middle-img");
+  image.setAttribute("src",siteContent["main-content"]["middle-img-src"])
+}
+setImageMiddle();
+function bottomtext(){
+  let textContent = document.querySelector(".bottom-content").children;
+  let textLeft = textContent[0].children;
+  textLeft[0].append(siteContent["main-content"]["services-h4"])
+  textLeft[1].append(siteContent["main-content"]["services-content"])
+  let textMiddle = textContent[1].children;
+  textMiddle[0].append(siteContent["main-content"]["product-h4"])
+  textMiddle[1].append(siteContent["main-content"]["product-content"])
+  let textRight = textContent[2].children;
+  textRight[0].append(siteContent["main-content"]["vision-h4"])
+  textRight[1].append(siteContent["main-content"]["vision-content"])
+}
+bottomtext();
+
+function contact(){
+  let textContent = document.querySelector(".contact").children;
+  textContent[0].append(siteContent["contact"]["contact-h4"])
+  textContent[1].append(siteContent["contact"]["address"])
+  textContent[2].append(siteContent["contact"]["phone"])
+  textContent[3].append(siteContent["contact"]["email"])
+}
+contact();
+
+function footer(){
+    let textContent = document.querySelector("footer").children;
+    textContent[0].append(siteContent["footer"]["copyright"])
+}
+footer();
